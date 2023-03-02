@@ -23,15 +23,7 @@ function Bg({ pageinfo }: Props) {
     loop: true,
     delaySpeed: 2000,
   });
-  const handleDownload = () => {
-    const url = 'https://drive.google.com/uc?id=1OVSv47LKST_kLarHrwu3ftEf8IiWSmL5&export=download'; // replace with the actual URL of your resume file
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', 'hrithik-gh.pdf'); // replace with the actual name of your resume file
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+
 
   const buttonStyles = {
     background: 'transparent',
@@ -56,22 +48,7 @@ function Bg({ pageinfo }: Props) {
   
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
-  <div className="flex flex-col absolute"
-     style={{
-      top: '88%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)'
-    }}>
-      <div className="flex-shrink-0">
-        <button
-          className="px-10 py-4 my-3 font-bold shadow-md rounded-full text-black hover:scale-90 transition duration-150 transform hover:shadow-xl"
-          style={{ backgroundColor: '#00bcd4', backgroundImage: 'linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%)' }}
-          onClick={handleDownload} // add onClick handler to call handleDownload function
->
-          <a className="text-white">Download Resume</a> 
-        </button>
-      </div>
-    </div>
+
     
       
     
