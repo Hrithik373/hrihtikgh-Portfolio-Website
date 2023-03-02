@@ -1,0 +1,17 @@
+.button {
+    background: transparent;
+    color: #00FFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-right: 20px;
+    box-shadow: 0 0 10px rgba(0,255,255,0.6);
+    transition: all 0.3s ease;
+    outline: none;
+  }
+  
+  .button:hover,
+  .button:focus {
+    background-color: cyan;
+    cursor: pointer;
+  }

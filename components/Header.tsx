@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import React from 'react';
 import { SocialIcon } from "react-social-icons";
 import { Social } from '../typings';
+
 
 type Props = {
   socials: Social[]
@@ -57,7 +59,8 @@ export default function Header({ socials }: Props) {
        network='email'
        fgColor='grey'
        bgColor='transparent'/>
-       <p className='uppercase hidden md:inline-flex text-small text-gray-500'>Get In Touch </p>
+      <Link href="#contact"><p className='uppercase hidden md:inline-flex text-small text-gray-500'>Get In Touch </p></Link>
+       
     </motion.div>
     
     </header>

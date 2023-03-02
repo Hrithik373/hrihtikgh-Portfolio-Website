@@ -27,6 +27,7 @@
     "react-router": "^6.8.1",
     "react-router-dom": "^6.8.1",
     "react-scripts": "^5.0.1",
+    "react-scroll": "^1.8.9",
     "react-simple-typewriter": "^4.0.5",
     "react-social-icons": "^5.14.0",
     "tailwind-scrollbar-hide": "^1.1.7",

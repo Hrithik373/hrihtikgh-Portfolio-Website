@@ -26,7 +26,7 @@ export default function About({pageinfo}: Props) {
       transition={{ duration: 1.2 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      src="./bg.jpg" 
+      src="./AboutB1.PNG" 
       className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 relative rounded-full  md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] object-cover"
     ></motion.img>
 
@@ -36,7 +36,7 @@ export default function About({pageinfo}: Props) {
         <span className="decoration-[#F7AB0A]/50 underline">little</span>{" "}
         background
       </h4>
-      <p className='text-base'>Software Engineer with 1+ year of experience with good problem solving and coding skills , with experience of automation scripting , quick learner and enthusiastic , always a smile .</p>
+      <p className='text-base'>Hi , I'm Hrithik , I have graduated from West Bengal University of Technology in Computer Science of Engineering with a overall GPA of 7.92. I have 1.3+ Years of professional experience as a Software Engineer in Telecommunication. With a undying passion for software and technologies trying to learn technologies and implement my knowledge and always tryna keep a smile :) , Thats all folks .</p>
     </div>
   </motion.div>
   )

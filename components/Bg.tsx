@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 
+/* eslint-disable @next/next/no-img-element */
 //2 issues faced skipping for now though 
 import Link from "next/link";
 import React from "react";
@@ -9,11 +9,10 @@ import { pageinfo } from "../typings";
 import BackgroundCircles from "./BackgroundCircle";
 import { useRouter } from 'next/router';
 import sf from "../pages/sf";
-
+//import styles from './Button.module.css';
 type Props = {
   pageinfo: pageinfo;
 };
-
 function Bg({ pageinfo }: Props) {
   const [text, count] = useTypewriter({
     words: [
@@ -24,40 +23,55 @@ function Bg({ pageinfo }: Props) {
     loop: true,
     delaySpeed: 2000,
   });
-  const router = useRouter();
+  const handleDownload = () => {
+    const url = 'https://drive.google.com/uc?id=1OVSv47LKST_kLarHrwu3ftEf8IiWSmL5&export=download'; // replace with the actual URL of your resume file
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'hrithik-gh.pdf'); // replace with the actual name of your resume file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
-
-  const DownloadResumeButton = () => {
-    const handleDownload = () => {
-      const url = 'https://example.com/your-resume.pdf'; // replace with the actual URL of your resume file
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', 'hrithikgh-resume.pdf'); // replace with the actual name of your resume file
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    };
+  const buttonStyles = {
+    background: 'transparent',
+    color: '#00FFFF',
+    border: 'none',
+    padding: '10px 20px',
+    borderRadius: '25px',
+    marginRight: '20px',
+    boxShadow: '0 0 10px rgba(0,255,255,0.6)',
+    transition: 'all 0.3s ease',
+    outline: 'none',
+    cursor: 'pointer',
+  };
   
-
+  const hoverStyles = {
+    background: '#00bcd4',
+    backgroundImage: 'linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%)',
+    color: '#FFFFFF',
+    transform: 'scale(0.9)',
+    boxShadow: '0 0 20px rgba(0,255,255,0.8)',
+  };
+  
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
-   <div className="flex flex-col absolute"
+  <div className="flex flex-col absolute"
      style={{
       top: '88%',
       left: '50%',
       transform: 'translate(-50%, -50%)'
     }}>
-    <div className="flex-shrink-0">
-    <button
-            className="px-10 py-4 my-3 font-bold shadow-md rounded-full text-black hover:scale-90 transition duration-150 transform hover:shadow-xl"
-            style={{ backgroundColor: '#00bcd4', backgroundImage: 'linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%)' }}
-           >
-              <a className="text-white">Don't click</a>
-           
-          </button>
+      <div className="flex-shrink-0">
+        <button
+          className="px-10 py-4 my-3 font-bold shadow-md rounded-full text-black hover:scale-90 transition duration-150 transform hover:shadow-xl"
+          style={{ backgroundColor: '#00bcd4', backgroundImage: 'linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%)' }}
+          onClick={handleDownload} // add onClick handler to call handleDownload function
+>
+          <a className="text-white">Download Resume</a> 
+        </button>
+      </div>
     </div>
-  </div>
-
     
       
     
@@ -75,27 +89,77 @@ function Bg({ pageinfo }: Props) {
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#F7AB0A" />
         </h1>
+        <div className="pt-5 ">
+      <Link href="#about">
+        <button className="buttonStyles hover-effect px-10 py-4 my-3 font-bold shadow-md rounded-full text-black hover:scale-90 transition duration-150 transform hover:shadow-xl">
+          About
+        </button>
+      </Link>
 
-        <div className="pt-5">
-          <Link href="#about">
-            <button className="heroButton">About</button>
-          </Link>
+      <Link href="#experience">
+        <button className="buttonStyles hover-effect px-10 py-4 my-3 font-bold shadow-md rounded-full text-black hover:scale-90 transition duration-150 transform hover:shadow-xl">
+          Experience
+        </button>
+      </Link>
 
-          <Link href="#experience">
-            <button className="heroButton">Experience</button>
-          </Link>
+      <Link href="#skills">
+        <button className="buttonStyles hover-effect px-10 py-4 my-3 font-bold shadow-md rounded-full text-black hover:scale-90 transition duration-150 transform hover:shadow-xl">
+          Skills
+        </button>
+      </Link>
 
-          <Link href="#skills">
-            <button className="heroButton">Skills</button>
-          </Link>
+      <Link href="#projects">
+        <button className="buttonStyles hover-effect px-10 py-4 my-3 font-bold shadow-md rounded-full text-black hover:scale-90 transition duration-150 transform hover:shadow-xl">
+          Projects
+        </button>
+      </Link>
 
-          <Link href="#projects">
-            <button className="heroButton">Projects</button>
-          </Link>
+  <style jsx>{`
+    .buttonStyles {
+    background: transparent;
+    color: #00FFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-right: 20px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .hover-effect {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    color: #00FFFF;
+    border: 2px solid #00FFFF;
+    transition: all 0.3s ease;
+  }
+  
+  .hover-effect:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: #00FFFF;
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+  
+  .hover-effect:hover {
+    color: #FFFFFF;
+  }
+  
+  .hover-effect:hover:before {
+    top: 0;
+  }
+`}</style>
         </div>
       </div>
     </div>
   );
 }
-
 export default Bg;
+
