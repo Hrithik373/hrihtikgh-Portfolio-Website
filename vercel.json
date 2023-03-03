@@ -1,15 +1,41 @@
 {
   "version": 2,
-  "builds": [{ "src": "package.json", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "index.js" }],
+  "builds": [
+    { "src": "next.config.js", "use": "@vercel/next" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/" }
+  ],
+  "env": {
+    "SANITY_PROJECT_ID": "@sanity_project_id",
+    "SANITY_DATASET": "@sanity_dataset"
+  },
   "env": {
     "SANITY_PROJECT_ID": "@sanity_project_id",
     "SANITY_DATASET": "@sanity_dataset"
   },
   "build": {
-    "command": "npm run dev",
-    "functions": {
-      "api/**/*.{js,ts}": { "runtime": "@vercel/node@16" }
+    "env": {
+      "NODE_ENV": "production"
     }
+  },
+  "dev": {
+    "env": {
+      "NODE_ENV": "development"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "scripts": {
+    "build": "next build",
+    "start": "next start"
   }
 }
