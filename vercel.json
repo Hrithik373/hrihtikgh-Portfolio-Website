@@ -7,9 +7,14 @@
     "SANITY_DATASET": "@sanity_dataset"
   },
   "build": {
-    "command": "npm run build",
     "functions": {
       "api/**/*.{js,ts}": { "runtime": "@vercel/node@16" }
     }
+  },
+  "dev": {
+    "routes": [
+      { "src": "/api/(.*)", "dest": "http://localhost:3000/api/$1" },
+      { "src": "/(.*)", "dest": "http://localhost:3000/$1" }
+    ]
   }
 }
