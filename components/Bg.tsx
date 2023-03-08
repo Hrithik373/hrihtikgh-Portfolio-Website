@@ -5,13 +5,13 @@ import Link from "next/link";
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { urlFor } from "../sanity";
-import { pageinfo } from "../typings";
+import { PageInfo } from '../typings';
 import BackgroundCircles from "./BackgroundCircle";
 import { useRouter } from 'next/router';
-import sf from "../pages/sf";
+//import sf from "../pages/sf";
 //import styles from './Button.module.css';
 type Props = {
-  pageinfo: pageinfo;
+  pageinfo: PageInfo;
 };
 function Bg({ pageinfo }: Props) {
   const [text, count] = useTypewriter({

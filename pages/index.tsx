@@ -14,6 +14,8 @@ import { fetchExperiences } from '../utils/fetchExperiences';
 import { fetchSkills } from '../utils/fetchSkills';
 import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSocial } from '../utils/fetchSocials';
+import { GetStaticProps } from 'next';
+import Image from 'next/image'
 
 type Props = {
   pageInfo: PageInfo;
@@ -76,10 +78,8 @@ e
       <a href="#bg">
         <footer className='sticky bottom-5 w-full cursor-pointer'>
           <div className='flex items-center justify-center'>
-            <img className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer '
-              src='./logo.jpg'
-              alt=''
-            />
+          <Image
+            className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer' src='/logo.jpg' alt='' width={40} height={40}/>
           </div>
         </footer>
       </a>

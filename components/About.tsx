@@ -36,7 +36,7 @@ export default function About({pageinfo}: Props) {
         <span className="decoration-[#F7AB0A]/50 underline">little</span>{" "}
         background
       </h4>
-      <p className='text-base'>Hi , I'm Hrithik , I have graduated from West Bengal University of Technology in Computer Science of Engineering with a overall GPA of 7.92. I have 1.3+ Years of professional experience as a Software Engineer in Telecommunication. With a undying passion for software and technologies trying to learn technologies and implement my knowledge and always tryna keep a smile :) , Thats all folks .</p>
+      <p className='text-base'>Hi , I&apos;m Hrithik , I have graduated from West Bengal University of Technology in Computer Science of Engineering with a overall GPA of 7.92. I have 1.3+ Years of professional experience as a Software Engineer in Telecommunication. With a undying passion for software and technologies trying to learn technologies and implement my knowledge and always tryna keep a smile :) , Thats all folks .</p>
     </div>
   </motion.div>
   )

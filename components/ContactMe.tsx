@@ -39,7 +39,7 @@ function ContactMe({ pageInfo }: Props) {
       <div className="flex flex-col space-y-10">
         <h4 className="text-4xl font-semibold text-center">
           Thanks for visiting .{" "}
-          <span className="decoration-[#F7AB0A]/50 underline">Let's Connect.</span>
+          <span className="decoration-[#F7AB0A]/50 underline">Let&apos;s Connect.</span>
         </h4>
 
         <div className="space-y-10">
