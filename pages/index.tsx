@@ -15,7 +15,7 @@ import { fetchSkills } from '../utils/fetchSkills';
 import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSocial } from '../utils/fetchSocials';
 import { GetStaticProps } from 'next';
-import Image from 'next/image'
+import Image from 'next/image';
 
 type Props = {
   pageInfo: PageInfo;
